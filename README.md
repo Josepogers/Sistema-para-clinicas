@@ -20,14 +20,15 @@ Material Design (Para um design moderno e responsivo)
 
 📂 Estrutura do Projeto
 
-📂 clinica_hd
- ├── 📁 lib
- │   ├── home_page.dart  # Página principal com a interface
- │   ├── recepcao_page.dart  # Exemplo de página de setor
- │   ├── ... (outras páginas de setores)
- ├── 📁 assets  # Caso haja imagens ou ícones personalizados
- ├── pubspec.yaml  # Dependências do Flutter
- ├── README.md  # Este arquivo
+clinica_hd/
+│── lib/
+│   ├── home_page.dart        # Página principal com a interface
+│   ├── recepcao_page.dart    # Exemplo de página de setor
+│   ├── ... (outras páginas)
+│── assets/                   # Caso haja imagens ou ícones personalizados
+│── pubspec.yaml              # Arquivo de dependências do Flutter
+│── README.md                 # Este arquivo
+
 
 🎨 Capturas de Tela (Opcional: Adicione prints do app)
 
