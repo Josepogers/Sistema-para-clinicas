@@ -21,12 +21,12 @@ Este é um aplicativo desenvolvido em Flutter para a **Clínica HD**, oferecendo
 ```
 📂 clinica_hd
  ├── 📁 lib
- │   ├── home_page.dart  # Página principal com a interface
- │   ├── recepcao_page.dart  # Exemplo de página de setor
+ │   ├── home_page.dart
+ │   ├── recepcao_page.dart
  │   ├── ... (outras páginas de setores)
- ├── 📁 assets  # Caso haja imagens ou ícones personalizados
- ├── pubspec.yaml  # Dependências do Flutter
- ├── README.md  # Este arquivo
+ ├── 📁 assets
+ ├── pubspec.yaml
+ ├── README.md
 ```
 
 ## 🎨 Capturas de Tela _(Opcional: Adicione prints do app)_
