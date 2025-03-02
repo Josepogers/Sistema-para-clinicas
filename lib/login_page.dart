@@ -13,29 +13,45 @@ class LoginPage extends StatelessWidget {
     String? senha = loginFakes[0]['senha'];
     final TextEditingController _controllerUsuario = TextEditingController();
     final TextEditingController _controllerSenha = TextEditingController();
-    void verificarUsuario() {
+    String verificarUsuario() {
       if (_controllerUsuario.text == usuario) {
         debugPrint('O usuario é existente');
+        return 'acesso autorizado';
       }
+      return 'acesso negado';
     }
 
-    void verificarSenha() {
+    String verificarSenha() {
       if (_controllerSenha.text == senha) {
-        debugPrint('A senha bate');
+        debugPrint('A senha é existente');
+        return 'acesso autorizado';
       }
+      return 'acesso negado';
     }
 
     void aoEntrar() {
-      verificarSenha();
-      verificarUsuario();
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (_) => HomePage(),
-        ),
-      );
-      debugPrint(
-          '${_controllerUsuario.text} Entrou com a senha ${_controllerSenha.text}');
+      String permissaoUsuario = verificarUsuario();
+      String permissaoSenha = verificarSenha();
+      if (permissaoUsuario == 'acesso autorizado' &&
+          permissaoSenha == 'acesso autorizado') {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => HomePage(),
+          ),
+        );
+        debugPrint(
+            '${_controllerUsuario.text} Entrou com a senha ${_controllerSenha.text}');
+      } else {
+        debugPrint('$permissaoUsuario $permissaoSenha');
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+            'Acesso negado',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: Colors.red,
+        ));
+      }
     }
 
     return Scaffold(
