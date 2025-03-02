@@ -1,5 +1,8 @@
+// ignore_for_file: no_leading_underscores_for_local_identifiers
+
 import 'package:flutter/material.dart';
 import 'mock/dados_login_fakes.dart';
+import 'home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -20,6 +23,19 @@ class LoginPage extends StatelessWidget {
       if (_controllerSenha.text == senha) {
         debugPrint('A senha bate');
       }
+    }
+
+    void aoEntrar() {
+      verificarSenha();
+      verificarUsuario();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => HomePage(),
+        ),
+      );
+      debugPrint(
+          '${_controllerUsuario.text} Entrou com a senha ${_controllerSenha.text}');
     }
 
     return Scaffold(
@@ -44,6 +60,7 @@ class LoginPage extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
+                  // ignore: deprecated_member_use
                   color: Colors.black.withOpacity(0.2),
                   blurRadius: 10,
                   spreadRadius: 2,
@@ -88,10 +105,7 @@ class LoginPage extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      verificarUsuario();
-                      verificarSenha();
-                      debugPrint(
-                          '${_controllerUsuario.text} Entrou com a senha ${_controllerSenha.text}');
+                      aoEntrar();
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xFF4A90E2),
