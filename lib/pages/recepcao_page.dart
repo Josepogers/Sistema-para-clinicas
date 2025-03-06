@@ -15,17 +15,12 @@ class _RecepcaoPageState extends State<RecepcaoPage> {
         title: Text('Recepcao'),
         centerTitle: true,
         actions: [
-          Tooltip(
-            message: 'Adicionar novo Paciente',
-            child: Icon(Icons.add),
-          ),
-          Tooltip(
-            message: 'Adicionar novo Paciente',
-            child: Icon(Icons.add),
-          ),
-          Tooltip(
-            message: 'Adicionar novo Paciente',
-            child: Icon(Icons.add),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.add,
+            ),
+            tooltip: 'Adicionar',
           )
         ],
       ),
