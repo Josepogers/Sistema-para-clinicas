@@ -9,7 +9,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Clínica HD',
+        title: const Text('Clínica',
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22)),
         centerTitle: true,
         backgroundColor: const Color(0xFF145388),
