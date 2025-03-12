@@ -2,7 +2,7 @@
 
 ## 📌 Sobre o Projeto
 
-Este é um aplicativo desenvolvido em Flutter para a **Clínica HD**, oferecendo uma interface moderna e intuitiva para navegação entre diferentes setores da clínica, como Recepção, Técnica, Administração, Laudos, Gerência e Faturamento.
+Este é um aplicativo desenvolvido em Flutter para **Clínicas**, oferecendo uma interface moderna e intuitiva para navegação entre diferentes setores da clínica, como Recepção, Técnica, Administração, Laudos, Gerência e Faturamento.
 
 ## 🛠️ Tecnologias Utilizadas
 
