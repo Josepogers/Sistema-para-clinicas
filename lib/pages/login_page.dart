@@ -1,39 +1,43 @@
 // ignore_for_file: no_leading_underscores_for_local_identifiers
 
 import 'package:flutter/material.dart';
-import 'mock/dados_login_fakes.dart';
+import '../mock/dados_login_fakes.dart';
 import 'home_page.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     String? usuario = loginFakes[0]['nome'];
     String? senha = loginFakes[0]['senha'];
     final TextEditingController _controllerUsuario = TextEditingController();
     final TextEditingController _controllerSenha = TextEditingController();
-    String verificarUsuario() {
+    bool verificarUsuario() {
       if (_controllerUsuario.text == usuario) {
         debugPrint('O usuario é existente');
-        return 'acesso autorizado';
+        return true;
       }
-      return 'acesso negado';
+      return false;
     }
 
-    String verificarSenha() {
+    bool verificarSenha() {
       if (_controllerSenha.text == senha) {
         debugPrint('A senha é existente');
-        return 'acesso autorizado';
+        return true;
       }
-      return 'acesso negado';
+      return false;
     }
 
     void aoEntrar() {
-      String permissaoUsuario = verificarUsuario();
-      String permissaoSenha = verificarSenha();
-      if (permissaoUsuario == 'acesso autorizado' &&
-          permissaoSenha == 'acesso autorizado') {
+      bool permissaoUsuario = verificarUsuario();
+      bool permissaoSenha = verificarSenha();
+      if (permissaoUsuario && permissaoSenha) {
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -44,13 +48,17 @@ class LoginPage extends StatelessWidget {
             '${_controllerUsuario.text} Entrou com a senha ${_controllerSenha.text}');
       } else {
         debugPrint('$permissaoUsuario $permissaoSenha');
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-          content: Text(
-            'Acesso negado',
-            style: TextStyle(color: Colors.white),
+        _controllerSenha.clear();
+        _controllerUsuario.clear();
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(
+              'Acesso negado',
+              style: TextStyle(color: Colors.white),
+            ),
+            backgroundColor: Colors.red,
           ),
-          backgroundColor: Colors.red,
-        ));
+        );
       }
     }
 

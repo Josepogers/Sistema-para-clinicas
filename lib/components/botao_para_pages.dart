@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 Widget botaoParaPages(
-    BuildContext context, String title, IconData icon, Widget page) {
+    BuildContext context, String titulo, IconData icone, Widget pagina) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
       backgroundColor: Colors.white,
@@ -14,15 +14,15 @@ Widget botaoParaPages(
     ),
     onPressed: () => Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => page),
+      MaterialPageRoute(builder: (context) => pagina),
     ),
     child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Icon(icon, color: Color(0xFF145388), size: 40),
+        Icon(icone, color: Color(0xFF145388), size: 40),
         const SizedBox(height: 8),
         Text(
-          title,
+          titulo,
           style: const TextStyle(
             color: Colors.black,
             fontSize: 16,
