@@ -20,7 +20,14 @@ class _RecepcaoPageState extends State<RecepcaoPage> {
             icon: const Icon(
               Icons.add,
             ),
-            tooltip: 'Adicionar',
+            tooltip: 'Cadastrar paciente',
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.add,
+            ),
+            tooltip: 'Remover paciente',
           )
         ],
       ),
