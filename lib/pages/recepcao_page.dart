@@ -25,7 +25,7 @@ class _RecepcaoPageState extends State<RecepcaoPage> {
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.add,
+              Icons.remove,
             ),
             tooltip: 'Remover paciente',
           )
